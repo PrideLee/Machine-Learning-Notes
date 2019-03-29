@@ -1,0 +1,1 @@
+This project indroduce the HMM, CRF and Bi-LSTM+CRF using in the sequence tagging in NLP.
