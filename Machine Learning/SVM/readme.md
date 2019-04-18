@@ -1,1 +1,0 @@
-This project is to introduction SVM. 
