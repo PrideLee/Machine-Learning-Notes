@@ -29,6 +29,6 @@ This project is about machine learning, deep learning, data mining notes and rel
 - [Active Learning](https://github.com/PrideLee/Machine-Learning-Notes/tree/master/Machine%20Learning/active%20learning)
 - [Bias-variance Dilemma in Machine Learning](https://github.com/PrideLee/Machine-Learning-Notes/tree/master/Machine%20Learning/bias-variance%20dilemma)
 - [Recommendation System and Matrix Factorization](https://github.com/PrideLee/Machine-Learning-Notes/tree/master/Machine%20Learning/Recommendation%20System%20%26%26%20Matrix%20decomposition)
-- [Probability Graph Model](https://github.com/PrideLee/Machine-Learning-Notes/tree/master/Machine%20Learning/probability%20graph%20model)
+- [Probability Graphical Model](https://github.com/PrideLee/Machine-Learning-Notes/tree/master/Machine%20Learning/probability%20graph%20model)
 
 For read easier and convenient, you can also follow my [Zhihu](https://zhuanlan.zhihu.com/c_1040305535475789824)  column.
