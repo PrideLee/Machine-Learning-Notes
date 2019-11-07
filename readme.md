@@ -10,7 +10,7 @@ This project is about machine learning, deep learning, data mining notes and rel
 - [Expectation-maximization (EM) Algorithm](https://pridelee.github.io/files/blog/EM.pdf)
 - [Explanation Recommendation System Review](https://pridelee.github.io/files/blog/recommendation-system-explaination.pdf)
 - [Fine-Grained Entity Typing (FET) with Knowledge Attention](https://pridelee.github.io/files/blog/FET-KA.pdf)
-- [Feature Pyramid Networks (FPN) for Object Detection]https://pridelee.github.io/files/blog/FPN-blog.pdf)
+- [Feature Pyramid Networks (FPN) for Object Detection](https://pridelee.github.io/files/blog/FPN-blog.pdf)
 - [R-CNN to Faster R-CNN for Object Detection](https://pridelee.github.io/files/blog/R-CNN_Faster-R-CNN.pdf)
 - [Hidden Markov Model (HMM) & Condition Random Field (CRF)](https://pridelee.github.io/files/blog/sequence-labelling.pdf)
 - [Knowledge Graph (KG) Review](https://pridelee.github.io/files/blog/Knowledge-Graph.pdf)
