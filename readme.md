@@ -1,7 +1,7 @@
 # Machine-Learning-Notes
 This project is about machine learning, deep learning, data mining notes and relevant papers introduction.
 
-## Catalogue
+## Contents
 
 - [Backpropagation (BP) Algorithm](https://pridelee.github.io/files/blog/BP-algorithm.pdf)
 - [CVPR 2019 Object Detection](https://pridelee.github.io/files/blog/CVPR-2019-Object-Detection-Papers.pdf)
@@ -32,5 +32,6 @@ This project is about machine learning, deep learning, data mining notes and rel
 - [Probability Graphical Model](https://pridelee.github.io/files/blog/PGM.pdf)
 - [Unordered Sampling With Replacement](https://pridelee.github.io/files/blog/Sampling.pdf)
 - [Monty Hall Problem](https://pridelee.github.io/files/blog/Monty-Hall-Problem.pdf)
+- [Knowledge Graph Convolutional Network for Recommender System](ttps://pridelee.github.io/files/blog/KGCN-for-RS.pdf)
 
 For read easier and convenient, you can also follow my [Zhihu](https://zhuanlan.zhihu.com/c_1040305535475789824)  column.
