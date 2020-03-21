@@ -1,0 +1,1 @@
+An introduction to the champion scheme of ICDM/ICBK Contest 2019. [**here**](https://pridelee.github.io/files/blog/ICDM-ICBK-Contest-2019.pdf) and [**here**](https://zhuanlan.zhihu.com/p/115033317) to read full blog.
