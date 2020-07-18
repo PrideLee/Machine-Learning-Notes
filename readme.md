@@ -35,5 +35,6 @@ This project is about machine learning, deep learning, data mining notes and rel
 - [Knowledge Graph Convolutional Network for Recommender System](https://pridelee.github.io/files/blog/KGCN-for-RS.pdf)
 - [ICDM/ICBK 2019 Contest](https://pridelee.github.io/files/blog/ICDM-ICBK-Contest-2019.pdf)
 - [Words and Sentences Similarity Calculation (WMD&WRD)](https://pridelee.github.io/files/blog/Sentence-Similarity.pdf)
+- [Data integration system](https://pridelee.github.io/files/blog/Data-integration-systems.pdf)
 
 For read easier and convenient, you can also follow my [Zhihu](https://zhuanlan.zhihu.com/c_1040305535475789824)  column.
