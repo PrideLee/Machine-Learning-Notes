@@ -37,5 +37,6 @@ This project is about machine learning, deep learning, data mining notes and rel
 - [Words and Sentences Similarity Calculation (WMD&WRD)](https://pridelee.github.io/files/blog/Sentence-Similarity.pdf)
 - [Data integration system](https://pridelee.github.io/files/blog/Data-integration-systems.pdf)
 - [Deep transfer learning survey](https://pridelee.github.io/files/blog/Deep-transfer-learning-survey.pdf)
+- [Automatic Keyphrase Extraction: A Review of the State of the Art](https://pridelee.github.io/files/blog/Keyphrase-Extraction-Review.pdf)
 
 For read easier and convenient, you can also follow my [Zhihu](https://zhuanlan.zhihu.com/c_1040305535475789824)  column.
