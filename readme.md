@@ -38,5 +38,10 @@ This project is about machine learning, deep learning, data mining notes and rel
 - [Data integration system](https://pridelee.github.io/files/blog/Data-integration-systems.pdf)
 - [Deep transfer learning survey](https://pridelee.github.io/files/blog/Deep-transfer-learning-survey.pdf)
 - [Automatic Keyphrase Extraction: A Review of the State of the Art](https://pridelee.github.io/files/blog/Keyphrase-Extraction-Review.pdf)
+- [Introduction to information retrieval (Chapter 1 Boolean Retrieval)](https://pridelee.github.io/files/blog/Chapter1-Boolean-retrieval.pdf)
+- [Introduction to Information Retrieval Notes (Chapter 2 The term vocabulary and postings lists)](https://pridelee.github.io/files/blog/Chapter-2-The-term-vocabulary-and-postings-lists.pdf)
+- [Introduction to Information Retrieval Notes (Chapter 3 Dictionaries and tolerant retrieval)](https://pridelee.github.io/files/blog/Chapter-3-Dictionaries-and-tolerant-retrieval.pdf)
+- [Introduction to Information Retrieval Notes (Chapter 4 Index construction)](https://pridelee.github.io/files/blog/Chapter-4-Index-Constriction.pdf)
+- [Introduction to Information Retrieval Notes (Chapter 5 Index compression)](https://pridelee.github.io/files/blog/Chapter-5-Index-compression.pdf)
 
 For read easier and convenient, you can also follow my [Zhihu](https://zhuanlan.zhihu.com/c_1040305535475789824)  column.
