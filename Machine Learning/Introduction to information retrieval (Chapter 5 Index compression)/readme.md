@@ -138,7 +138,43 @@ $\gamma$ code = <length code, offset code>
 - length: encodes the length of offset in unary code. For example, if the offset is 0 or 1, the length of offset is 1, the unary code of 1 is 10. If offset is 00, the length of offset is 2, the unary code of 1 is 110;
 - $\gamma$ code: the combination of length and offset. 
 
-Via the offset code, we could determine the docID, and via the length, we could determine the boundary of each $\gamma$ code. The length of offset is $\lfloor log_2 G \rfloor$ bits and the length of length is $\lfloor log_2 G\rfloor + 1$ bits, so the length of the entire code is $2 \times \lfloor log2 G\rfloor + 1$ bits. 
+Via the offset code, we could determine the docID, and via the length, we could determine the boundary of each $\gamma$ code. The length of offset is $\lfloor log_2 G \rfloor$ bits and the length of length is $\lfloor log_2 G\rfloor + 1$ bits, so the length of the entire code is $2 \times \lfloor log2 G\rfloor + 1$ bits, where $G$ is the total number we have to encode, such as the gap. 
+
+Therefore, encoding the $N/j$ gaps of size $j$ with $\gamma$ codes, the number of bits needed for the postings list of a term in the $j$th block is:
+
+$$
+bits-per-row=\frac{N}{j}\times (2\times \lfloor log_2j \rfloor +1)\approx \frac{2Nlog_2j}{j}\tag{3}
+$$
+
+According to Zipf's las, the collection frequency $cf_i$ is proportional to the inverse of the rank $i$. We can choose a different constant $c$ such that the fractions $c/i$ are relative frequencies and sum to 1.
+
+$$
+1=\sum_{i=1}^M \frac{c}{i}=c \sum_{i=1}^M \frac{1}{i}=cH_M\tag{4}
+$$
+
+Thus:
+
+$$
+c=\frac{1}{H_M}\approx \frac{1}{lnM}=\frac{1}{ln400000}\approx \frac{1}{13}\tag{5}
+$$
+
+Based on the properties of [Harmonic series](https://en.wikipedia.org/wiki/Harmonic_series_(mathematics)), the difference between the finite partial sums of the diverging harmonic series $Hn$ and $lnn$ ($\sum_{k=1}^n\frac{1}{k}-ln n$) converges to the Euler–Mascheroni constant. So $H_M\approx ln M$ (ignore the Mascheroni constant). For Reuters-RCV1 the number of distinct terms $M=400000$.
+
+Thus the $i$th term has a relative frequency of roughly $1/(13i)$. Suppose the length of a document is $L$, the expected average number of occurrence of term $i$ is:
+
+$$
+L\frac{c}{i}\approx \frac{200\times \frac{1}{13}}{i}\approx \frac{15}{i}\tag{6}
+$$
+
+For $\gamma$ encoding, we could define the size of block as $Lc$. Based on formula (3), to encode the entire block, we need $(Lc)(2Nlog_2j)/j$ bits. And for Reuters-RCV1, there are $M/(Lc)$  blocks, so the posting sfile as a whole will take up:
+
+$$
+\sum_{j=1}^{\frac{M}{Lc}}\frac{2NLclog_2j}{j}\tag{7}
+$$
+
+For Reuters-RCV1, $\frac{M}{Lc}\approx 400000/15\approx 27000$ and $\sum_{j=1}^{27000}\frac{2\times 10^6\times 15log2j}{j}\approx 224MB$.
+
+For other encoding methods, we just change the length of the entire code ($2\times\lfloor log_2j\rfloor + 1$) in formula (3) to estimate the size of the compressed inverted index.
 
 The compression ratio for the index in Table 5.6 is about 25%: 400 MB (uncompressed, each posting stored as a 32-bit word) versus 101 MB ($\gamma$) and 116 MB (VB). 
 
