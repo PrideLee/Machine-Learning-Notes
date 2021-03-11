@@ -43,5 +43,6 @@ This project is about machine learning, deep learning, data mining notes and rel
 - [Introduction to Information Retrieval Notes (Chapter 3 Dictionaries and tolerant retrieval)](https://pridelee.github.io/files/blog/Chapter-3-Dictionaries-and-tolerant-retrieval.pdf)
 - [Introduction to Information Retrieval Notes (Chapter 4 Index construction)](https://pridelee.github.io/files/blog/Chapter-4-Index-Constriction.pdf)
 - [Introduction to Information Retrieval Notes (Chapter 5 Index compression)](https://pridelee.github.io/files/blog/Chapter-5-Index-compression.pdf)
+- [Introduction to Information Retrieval (Chapter 6 Scoring, term weighting and the vector space model)](https://pridelee.github.io/files/blog/Chapter-6-Scoring-term-weighting-and-the-vector-space-model.pdf)
 
 For read easier and convenient, you can also follow my [Zhihu](https://zhuanlan.zhihu.com/c_1040305535475789824)  column.
