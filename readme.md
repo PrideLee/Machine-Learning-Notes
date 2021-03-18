@@ -45,5 +45,6 @@ This project is about machine learning, deep learning, data mining notes and rel
 - [Introduction to Information Retrieval Notes (Chapter 5 Index compression)](https://pridelee.github.io/files/blog/Chapter-5-Index-compression.pdf)
 - [Introduction to Information Retrieval (Chapter 6 Scoring, term weighting and the vector space model)](https://pridelee.github.io/files/blog/Chapter-6-Scoring-term-weighting-and-the-vector-space-model.pdf)
 - [Introduction to Information Retrieval (Chapter 7 Computing scores in a complete search system)](https://pridelee.github.io/files/blog/Chapter-7-Computing-scores-in-a-complete-search-system.pdf)
+- [Problem Solving with Algorithms and Data Structures Using Python (Chapter 1 Introduction)](https://pridelee.github.io/files/blog/Chapter-1-Introduction.pdf)
 
 For read easier and convenient, you can also follow my [Zhihu](https://zhuanlan.zhihu.com/c_1040305535475789824)  column.
