@@ -1,0 +1,434 @@
+<!DOCTYPE html><html><head>
+      <title>Chapter 4 Recursion</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\poder\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.17\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="python-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E9%80%92%E5%BD%92">Python &#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E0E;&#x7B97;&#x6CD5;&#x5206;&#x6790;&#xFF08;&#x7B2C;&#x56DB;&#x7AE0; &#x9012;&#x5F52;&#xFF09;</h1>
+
+<h2 class="mume-header" id="1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5">1. &#x57FA;&#x672C;&#x6982;&#x5FF5;</h2>
+
+<ul>
+<li><strong>&#x9012;&#x5F52;</strong>&#xFF1A;&#x9012;&#x5F52;&#x662F;&#x89E3;&#x51B3;&#x95EE;&#x9898;&#x7684;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x5B83;&#x5C06;&#x95EE;&#x9898;&#x4E0D;&#x65AD;&#x5730;&#x5206;&#x6210;&#x66F4;&#x5C0F;&#x7684;&#x5B50;&#x95EE;&#x9898;&#xFF0C;&#x76F4;&#x5230;&#x5B50;&#x95EE;&#x9898;&#x53EF;&#x4EE5;&#x7528;&#x666E;&#x901A;&#x7684;&#x65B9;&#x6CD5;&#x89E3;&#x51B3;&#x3002;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x9012;&#x5F52;&#x4F1A;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x4E0D;&#x505C;&#x8C03;&#x7528;&#x81EA;&#x5DF1;&#x7684;&#x51FD;&#x6570;&#x3002;</li>
+<li><strong>&#x9012;&#x5F52;&#x4E09;&#x539F;&#x5219;</strong>&#xFF1A;
+<ul>
+<li>&#x9012;&#x5F52;&#x7B97;&#x6CD5;&#x5FC5;&#x987B;&#x6709;&#x57FA;&#x672C;&#x60C5;&#x51B5;&#xFF1B;</li>
+<li>&#x9012;&#x5F52;&#x7B97;&#x6CD5;&#x5FC5;&#x987B;&#x6539;&#x53D8;&#x5176;&#x72B6;&#x6001;&#x5E76;&#x5411;&#x57FA;&#x672C;&#x60C5;&#x51B5;&#x9760;&#x8FD1;&#xFF1B;</li>
+<li>&#x9012;&#x5F52;&#x7B97;&#x6CD5;&#x5FC5;&#x987B;&#x9012;&#x5F52;&#x5730;&#x8C03;&#x7528;&#x81EA;&#x5DF1;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<h2 class="mume-header" id="2-%E5%A4%8D%E6%9D%82%E9%80%92%E5%BD%92%E9%97%AE%E9%A2%98">2. &#x590D;&#x6742;&#x9012;&#x5F52;&#x95EE;&#x9898;</h2>
+
+<p><strong>&#xFF08;1&#xFF09;&#x6C49;&#x8BFA;&#x5854;&#x95EE;&#x9898;</strong></p>
+<center>
+<p><img src="tower.png" alt="tower"></p>
+</center>
+<p>&#x2003;&#x2003;&#x8981;&#x6C42;&#x5C06;fromPole&#x67F1;&#x5B50;&#x4E0A;&#x7684;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span>&#x4E2A;&#x5706;&#x76D8;&#x79FB;&#x52A8;&#x81F3;toPole&#x67F1;&#x5B50;&#x4E0A;&#xFF0C;&#x8BE5;&#x95EE;&#x9898;&#x53EF;&#x7531;&#x9012;&#x5F52;&#x7B97;&#x6CD5;&#x5B8C;&#x7F8E;&#x89E3;&#x51B3;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5BF9;&#x4E8E;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span>&#x4E2A;&#x5706;&#x76D8;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x5176;&#x89C6;&#x4E3A;&#x4E24;&#x4E2A;&#x5706;&#x76D8;&#xFF0C;&#x5373;&#x6700;&#x5E95;&#x5C42;&#x5706;&#x76D8;&#x548C;&#x4E0A;&#x5C42;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>&#x2212;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>&#x4E2A;&#x5706;&#x76D8;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x8981;&#x5C06;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span>&#x4E2A;&#x5706;&#x76D8;&#x79FB;&#x52A8;&#x81F3;toPole&#x67F1;&#x5B50;&#x4E0A;&#xFF0C;&#x5176;&#x53EF;&#x901A;&#x8FC7;&#x5982;&#x4E0B;&#x4E09;&#x4E2A;&#x6B65;&#x9AA4;&#x5B8C;&#x6210;&#xFF1A;</p>
+<ul>
+<li>Step1. &#x5C06;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>&#x2212;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>&#x5706;&#x76D8;&#x4ECE;fromPole&#x67F1;&#x5B50;&#x79FB;&#x52A8;&#x81F3;withPole&#x67F1;&#x5B50;&#x4E0A;&#xFF1B;</li>
+<li>Step2. &#x5C06;&#x6700;&#x5E95;&#x5C42;&#x5706;&#x76D8;&#x4ECE;fromPole&#x67F1;&#x5B50;&#x79FB;&#x52A8;&#x81F3;toPole&#x67F1;&#x5B50;&#x4E0A;&#xFF1B;</li>
+<li>Step3. &#x5C06;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>&#x2212;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>&#x5706;&#x76D8;&#x4ECE;withPole&#x67F1;&#x5B50;&#x79FB;&#x52A8;&#x81F3;toPole&#x67F1;&#x5B50;&#x4E0A;&#xFF1B;</li>
+</ul>
+<p>&#x2003;&#x2003;&#x800C;&#x5C06;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>&#x2212;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>&#x5706;&#x76D8;&#x4ECE;fromPole&#x67F1;&#x5B50;&#x79FB;&#x52A8;&#x81F3;toPole&#x4E0A;&#xFF0C;&#x53C8;&#x53EF;&#x4EE5;&#x89C6;&#x4E3A;&#x5C06;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>&#x2212;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>&#x6700;&#x5E95;&#x5C42;&#x5706;&#x76D8;&#x79FB;&#x52A8;&#x81F3;toPole&#x67F1;&#x5B50;&#x4E0A;&#x548C;&#x5C06;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>&#x2212;</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">n-2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>&#x5706;&#x76D8;&#x79FB;&#x52A8;&#x81F3;toPole&#x67F1;&#x5B50;&#x4E0A;&#x3002;&#x6545;&#xFF0C;&#x8BE5;&#x8FC7;&#x7A0B;&#x53EF;&#x7531;&#x9012;&#x5F52;&#x5B9E;&#x73B0;&#x3002;</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">moveTower</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> fromPole<span class="token punctuation">,</span> toPole<span class="token punctuation">,</span> withPole<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> n <span class="token operator">&gt;=</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        moveTower<span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> fromPole<span class="token punctuation">,</span> withPole<span class="token punctuation">,</span> toPole<span class="token punctuation">)</span>  <span class="token comment">## &#x5C06;n-1&#x5706;&#x76D8;&#x4ECE;fromPole&#x67F1;&#x5B50;&#x7ECF;&#x7531;toPole&#x67F1;&#x5B50;&#x79FB;&#x52A8;&#x81F3;withPole&#x67F1;&#x5B50;</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;moving disk from %d to %d\n&quot;</span> <span class="token operator">%</span> <span class="token punctuation">(</span>fromPole<span class="token punctuation">,</span> toPole<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment">## &#x5C06;n&#x5706;&#x76D8;&#x4ECE;fromPole&#x67F1;&#x5B50;&#x79FB;&#x52A8;&#x81F3;toPole&#x67F1;&#x5B50;</span>
+        moveTower<span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> withPole<span class="token punctuation">,</span> toPole<span class="token punctuation">,</span> fromPole<span class="token punctuation">)</span>  <span class="token comment">## &#x5C06;n-1&#x5706;&#x76D8;&#x4ECE;withPole&#x67F1;&#x5B50;&#x7ECF;&#x7531;fromPole&#x67F1;&#x5B50;&#x79FB;&#x52A8;&#x81F3;toPole&#x67F1;&#x5B50;</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;Please input again.&apos;</span><span class="token punctuation">)</span>
+
+moveTower<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+</pre><blockquote>
+<p>moving disk from 1 to 2<br>
+moving disk from 1 to 3<br>
+moving disk from 2 to 3<br>
+moving disk from 1 to 2<br>
+moving disk from 3 to 1<br>
+moving disk from 3 to 2<br>
+moving disk from 1 to 2<br>
+moving disk from 1 to 3<br>
+moving disk from 2 to 3<br>
+moving disk from 2 to 1<br>
+moving disk from 3 to 1<br>
+moving disk from 2 to 3<br>
+moving disk from 1 to 2<br>
+moving disk from 1 to 3<br>
+moving disk from 2 to 3</p>
+</blockquote>
+<p><strong>&#xFF08;2&#xFF09;&#x8D2A;&#x5FC3;&#x7B97;&#x6CD5;</strong></p>
+<p>&#x2003;&#x2003;&#x8003;&#x8651;&#x5982;&#x4E0B;&#x95EE;&#x9898;&#xFF0C;&#x5047;&#x8BBE;&#x67D0;&#x4E2A;&#x81EA;&#x52A8;&#x552E;&#x8D27;&#x673A;&#x5236;&#x9020;&#x5546;&#x5E0C;&#x671B;&#x5728;&#x6BCF;&#x7B14;&#x4EA4;&#x6613;&#x4E2D;&#x7ED9;&#x51FA;&#x6700;&#x5C11;&#x7684;&#x786C;&#x5E01;&#x3002;&#x4E00;&#x4E2A;&#x987E;&#x5BA2;&#x4F7F;&#x7528;&#x4E00;&#x5F20;&#x4E00;&#x7F8E;&#x5143;&#x7684;&#x7EB8;&#x5E01;&#x8D2D;&#x4E70;&#x4E86;&#x4EF7;&#x503C; 37 &#x7F8E;&#x5206;&#x7684;&#x7269;&#x54C1;&#xFF0C;&#x6700;&#x5C11;&#x9700;&#x8981;&#x627E;&#x7ED9;&#x8BE5;&#x987E;&#x5BA2;&#x591A;&#x5C11;&#x786C;&#x5E01;&#x5462;&#xFF1F;</p>
+<p>&#x2003;&#x2003;&#x8BE5;&#x95EE;&#x9898;&#x662F;&#x8D2A;&#x5A6A;&#x7B97;&#x6CD5;&#x7684;&#x5178;&#x578B;&#x5E94;&#x7528;&#xFF0C;&#x5373;&#x4ECE;&#x9762;&#x503C;&#x6700;&#x5927;&#x7684;&#x786C;&#x5E01;&#x5F00;&#x59CB;&#xFF0C;&#x4F7F;&#x7528;&#x5C3D;&#x53EF;&#x80FD;&#x591A;&#x7684;&#x786C;&#x5E01;&#xFF0C;&#x7136;&#x540E;&#x5C3D;&#x53EF;&#x80FD;&#x591A;&#x5730;&#x4F7F;&#x7528;&#x9762;&#x503C;&#x7B2C;2&#x5927;&#x7684;&#x786C;&#x5E01;&#x3002;&#x5176;&#x5B83;&#x7C7B;&#x4F3C;&#x95EE;&#x9898;&#x8FD8;&#x5305;&#x62EC;&#x5982;&#x80CC;&#x5305;&#x95EE;&#x9898;&#xFF0C;&#x5373;&#x80CC;&#x5305;&#x5BB9;&#x91CF;&#x6709;&#x9650;&#xFF0C;&#x5982;&#x4F55;&#x9009;&#x62E9;&#x5B9D;&#x77F3;&#x7EC4;&#x5408;&#x4F7F;&#x5F97;&#x6240;&#x88C5;&#x5B9D;&#x77F3;&#x4EF7;&#x503C;&#x6700;&#x5927;&#x7B49;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x7136;&#x800C;&#x82E5;&#x9700;&#x8981;&#x679A;&#x4E3E;&#x51FA;&#x6240;&#x6709;&#x627E;&#x96F6;&#x7684;&#x53EF;&#x80FD;&#xFF0C;&#x8BE5;&#x95EE;&#x9898;&#x5373;&#x53EF;&#x4F7F;&#x7528;&#x9012;&#x5F52;&#x7B97;&#x6CD5;&#x6C42;&#x89E3;&#x3002;</p>
+<ul>
+<li>step1. &#x8F93;&#x5165;&#x9700;&#x6362;&#x96F6;&#x91D1;&#x989D;&#xFF0C;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x627E;&#x96F6;&#x65B9;&#x6848;&#x540E;&#x5BF9;&#x5E94;&#x7684;&#x8FD8;&#x9700;&#x6362;&#x96F6;&#x91D1;&#x989D;&#xFF0C;&#x5165;&#x961F;&#x5217;&#x3002;&#x5982;&#x6362;&#x96F6;&#x91D1;&#x989D;26&#xFF0C;&#x5219;&#x7ECF;[1, 5, 10, 25]&#x627E;&#x96F6;&#x540E;&#x8FD8;&#x9700;&#x6362;&#x96F6;&#x7684;&#x91D1;&#x989D;[25, 21, 16, 1]&#x3002;</li>
+<li>step2. &#x961F;&#x5217;&#x53D6;&#x6570;&#xFF0C;&#x9012;&#x5F52;Step1. &#x81F3;&#x8FD8;&#x9700;&#x6362;&#x96F6;&#x91D1;&#x989D;&#x4E3A;0&#x3002;</li>
+</ul>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">from</span> treelib <span class="token keyword">import</span> Tree
+<span class="token keyword">from</span> queue <span class="token keyword">import</span> Queue
+
+combine_selection <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">]</span>
+combine_number <span class="token operator">=</span> <span class="token number">8</span>
+
+
+<span class="token keyword">def</span> <span class="token function">minus</span><span class="token punctuation">(</span>input_num<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    one_return <span class="token operator">=</span> <span class="token boolean">None</span>
+    five_return <span class="token operator">=</span> <span class="token boolean">None</span>
+    ten_return <span class="token operator">=</span> <span class="token boolean">None</span>
+    quarter_return <span class="token operator">=</span> <span class="token boolean">None</span>
+    <span class="token keyword">if</span> input_num <span class="token operator">&gt;=</span> <span class="token number">25</span><span class="token punctuation">:</span>
+        quarter_return <span class="token operator">=</span> input_num <span class="token operator">-</span> <span class="token number">25</span>
+    <span class="token keyword">if</span> input_num <span class="token operator">&gt;=</span> <span class="token number">10</span><span class="token punctuation">:</span>
+        ten_return <span class="token operator">=</span> input_num <span class="token operator">-</span> <span class="token number">10</span>
+    <span class="token keyword">if</span> input_num <span class="token operator">&gt;=</span> <span class="token number">5</span><span class="token punctuation">:</span>
+        five_return <span class="token operator">=</span> input_num <span class="token operator">-</span> <span class="token number">5</span>
+    <span class="token keyword">if</span> input_num <span class="token operator">&gt;=</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        one_return <span class="token operator">=</span> input_num <span class="token operator">-</span> <span class="token number">1</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>one_return<span class="token punctuation">,</span> five_return<span class="token punctuation">,</span> ten_return<span class="token punctuation">,</span> quarter_return<span class="token punctuation">]</span>
+
+
+tree <span class="token operator">=</span> Tree<span class="token punctuation">(</span><span class="token punctuation">)</span>
+tree<span class="token punctuation">.</span>create_node<span class="token punctuation">(</span>tag<span class="token operator">=</span>combine_number<span class="token punctuation">,</span> identifier<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+queue <span class="token operator">=</span> Queue<span class="token punctuation">(</span><span class="token punctuation">)</span>
+queue<span class="token punctuation">.</span>put<span class="token punctuation">(</span>combine_number<span class="token punctuation">)</span>
+<span class="token keyword">while</span> <span class="token keyword">not</span> queue<span class="token punctuation">.</span>empty<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    input_temp <span class="token operator">=</span> queue<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    parents <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    temp_result <span class="token operator">=</span> minus<span class="token punctuation">(</span>input_temp<span class="token punctuation">)</span>
+    temp_result <span class="token operator">=</span> <span class="token punctuation">[</span>i <span class="token keyword">for</span> i <span class="token keyword">in</span> temp_result <span class="token keyword">if</span> i <span class="token operator">!=</span> <span class="token boolean">None</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> tree<span class="token punctuation">.</span>leaves<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> i<span class="token punctuation">.</span>tag <span class="token operator">==</span> input_temp<span class="token punctuation">:</span>
+            parents<span class="token punctuation">.</span>append<span class="token punctuation">(</span>i<span class="token punctuation">.</span>identifier<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> parent_temp <span class="token keyword">in</span> parents<span class="token punctuation">:</span>
+        <span class="token keyword">for</span> temp_node <span class="token keyword">in</span> temp_result<span class="token punctuation">:</span>
+            tree<span class="token punctuation">.</span>create_node<span class="token punctuation">(</span>tag<span class="token operator">=</span>temp_node<span class="token punctuation">,</span> parent<span class="token operator">=</span>parent_temp<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> temp_in <span class="token keyword">in</span> temp_result<span class="token punctuation">:</span>
+        queue<span class="token punctuation">.</span>put<span class="token punctuation">(</span>temp_in<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>tree<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><blockquote>
+<p>8<br>
+&#x251C;&#x2500;&#x2500; 3<br>
+&#x2502;   &#x2514;&#x2500;&#x2500; 2<br>
+&#x2502;       &#x2514;&#x2500;&#x2500; 1<br>
+&#x2502;           &#x2514;&#x2500;&#x2500; 0<br>
+&#x2514;&#x2500;&#x2500; 7<br>
+&#x251C;&#x2500;&#x2500; 2<br>
+&#x2502;   &#x2514;&#x2500;&#x2500; 1<br>
+&#x2502;       &#x2514;&#x2500;&#x2500; 0<br>
+&#x2514;&#x2500;&#x2500; 6<br>
+&#x251C;&#x2500;&#x2500; 1<br>
+&#x2502;   &#x2514;&#x2500;&#x2500; 0<br>
+&#x2514;&#x2500;&#x2500; 5<br>
+&#x251C;&#x2500;&#x2500; 0<br>
+&#x2514;&#x2500;&#x2500; 4<br>
+&#x2514;&#x2500;&#x2500; 3<br>
+&#x2514;&#x2500;&#x2500; 2<br>
+&#x2514;&#x2500;&#x2500; 1<br>
+&#x2514;&#x2500;&#x2500; 0</p>
+</blockquote>
+<p>&#x2003;&#x2003;&#x57FA;&#x4E8E;&#x9012;&#x5F52;&#x7684;&#x66B4;&#x529B;&#x679A;&#x4E3E;&#x6CD5;&#x5728;&#x65F6;&#x95F4;&#x6210;&#x672C;&#x4E0A;&#x5F00;&#x9500;&#x8F83;&#x5927;&#xFF0C;&#x5BF9;&#x4E8E;&#x8F83;&#x5927;&#x7684;&#x6570;&#x5B57;&#x662F;&#x4E0D;&#x53EF;&#x63A5;&#x53D7;&#x7684;&#x3002;&#x5BF9;&#x6B64;&#xFF0C;&#x8FD9;&#x91CC;&#x8FD8;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x4F7F;&#x7528;&#x52A8;&#x6001;&#x89C4;&#x5212;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x52A8;&#x6001;&#x89C4;&#x5212;&#x7B97;&#x6CD5;&#x4F1A;&#x4ECE; 1 &#x5206;&#x627E;&#x96F6;&#x5F00;&#x59CB;&#xFF0C;&#x7136;&#x540E;&#x7CFB;&#x7EDF;&#x5730;&#x4E00;&#x76F4;&#x8BA1;&#x7B97;&#x5230;&#x6240;&#x9700;&#x7684;&#x627E;&#x96F6;&#x91D1;&#x989D;&#x3002;&#x8FD9;&#x6837;&#x5373;&#x53EF;&#x4FDD;&#x8BC1;&#x6BCF;&#x4E00;&#x6B21;&#x7684;&#x627E;&#x96F6;&#x7B56;&#x7565;&#x5747;&#x4EE5;&#x4E0A;&#x4E00;&#x6B21;&#x7684;&#x627E;&#x96F6;&#x7B56;&#x7565;&#x4E3A;&#x57FA;&#x7840;&#xFF0C;&#x5982;23&#x627E;&#x96F6;&#x5C06;&#x4EE5;22&#x627E;&#x96F6;&#x4E3A;&#x57FA;&#x7840;&#x3002;&#x540C;&#x65F6;&#xFF0C;&#x4E0A;&#x4E00;&#x6B21;&#x7684;&#x627E;&#x96F6;&#x7B56;&#x7565;&#x53C8;&#x5C06;&#x662F;&#x6700;&#x4F18;&#x7684;&#x7B56;&#x7565;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x6BCF;&#x4E00;&#x6B21;&#x627E;&#x96F6;&#x5747;&#x4E3A;&#x6700;&#x4F18;&#x7B56;&#x7565;&#x3002;</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">minus_once</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> number <span class="token operator">==</span> <span class="token number">5</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">5</span><span class="token punctuation">,</span> number<span class="token operator">-</span><span class="token number">5</span>
+    <span class="token keyword">elif</span> number <span class="token operator">==</span> <span class="token number">10</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">10</span><span class="token punctuation">,</span> number<span class="token operator">-</span><span class="token number">10</span>
+    <span class="token keyword">elif</span> number <span class="token operator">==</span> <span class="token number">25</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">25</span><span class="token punctuation">,</span> number<span class="token operator">-</span><span class="token number">25</span>
+    <span class="token keyword">elif</span> number <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">,</span> number<span class="token operator">-</span><span class="token number">1</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> minus_index<span class="token punctuation">,</span> i <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> number<span class="token operator">-</span>i <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+                <span class="token keyword">break</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">]</span><span class="token punctuation">[</span>minus_index<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> number<span class="token operator">-</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">]</span><span class="token punctuation">[</span>minus_index<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+
+
+<span class="token keyword">def</span> <span class="token function">dp</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    dict_op <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    dict_op<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> number_temp <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> number<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        charge<span class="token punctuation">,</span> minus_result <span class="token operator">=</span> minus_once<span class="token punctuation">(</span>number_temp<span class="token punctuation">)</span>
+        dict_op<span class="token punctuation">[</span>number_temp<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>charge<span class="token punctuation">]</span> <span class="token operator">+</span> dict_op<span class="token punctuation">[</span>minus_result<span class="token punctuation">]</span>
+    <span class="token keyword">return</span> dict_op
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>dp<span class="token punctuation">(</span><span class="token number">26</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><blockquote>
+<p>{0: [0], 1: [1, 0], 2: [1, 1, 0], 3: [1, 1, 1, 0], 4: [1, 1, 1, 1, 0], 5: [5, 0], 6: [5, 1, 0], 7: [5, 1, 1, 0], 8: [5, 1, 1, 1, 0], 9: [5, 1, 1, 1, 1, 0], 10: [10, 0], 11: [10, 1, 0], 12: [10, 1, 1, 0], 13: [10, 1, 1, 1, 0], 14: [10, 1, 1, 1, 1, 0], 15: [10, 5, 0], 16: [10, 5, 1, 0], 17: [10, 5, 1, 1, 0], 18: [10, 5, 1, 1, 1, 0], 19: [10, 5, 1, 1, 1, 1, 0], 20: [10, 10, 0], 21: [10, 10, 1, 0], 22: [10, 10, 1, 1, 0], 23: [10, 10, 1, 1, 1, 0], 24: [10, 10, 1, 1, 1, 1, 0], 25: [25, 0], 26: [10, 10, 5, 1, 0]}</p>
+</blockquote>
+<h2 class="mume-header" id="3-%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE">3. &#x53C2;&#x8003;&#x6587;&#x732E;</h2>
+
+<p><a href="https://yun.weicheng.men/Book/Python%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90_%E7%AC%AC2%E7%89%88.pdf">Python&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E0E;&#x7B97;&#x6CD5;&#x5206;&#x6790;&#xFF08;&#x7B2C;2&#x7248;&#xFF09;</a></p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
