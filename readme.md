@@ -50,5 +50,6 @@ This project is about machine learning, deep learning, data mining notes and rel
 - [Problem Solving with Algorithms and Data Structures Using Python (Chapter 2 A Proper Class)](https://pridelee.github.io/files/blog/Chapter-2-A-Proper-Class.pdf)
 - [Problem Solving with Algorithms and Data Structures Using Python (Chapter 3 Basic data structures)](https://pridelee.github.io/files/blog/Chapter-3-Basic-data-structures.pdf)
 - [Introduction to Information Retrieval (Chapter 9 Relevance feedback and query expansion)](https://pridelee.github.io/files/blog/Chapter-9-Relevance-feedback-and-query-expansion.pdf)
+- [Problem Solving with Algorithms and Data Structures Using Python (Chapter 4 Recursion)](https://pridelee.github.io/files/blog/Chapter-4-Recursion.pdf)
 
 For read easier and convenient, you can also follow my [Zhihu](https://zhuanlan.zhihu.com/c_1040305535475789824)  column.
