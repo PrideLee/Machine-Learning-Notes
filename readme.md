@@ -54,7 +54,8 @@ This project is about machine learning, deep learning, data mining notes and rel
 - [Introduction to Information Retrieval (Chapter 10 XML retrieval)](https://pridelee.github.io/files/blog/Chapter-10-XML-retrieval.pdf)
 - [Problem Solving with Algorithms and Data Structures Using Python (Chapter 5 Sorting and Searching)](https://pridelee.github.io/files/blog/Chapter-5-Sorting-and-Searching.pdf)
 - [Introduction to Information Retrieval (Chapter 11 Probabilistic information retrieval)](https://pridelee.github.io/files/blog/Chapter-11-Probabilistic-information-retrieval.pdf)
-- [Problem Solving with Algorithms and Data Structures Using Python (Chapter 6 tree)](https://pridelee.github.io/files/blog/Chapter-6-tree.pdf)
+- [Problem Solving with Algorithms and Data Structures Using Python (Chapter 6 Tree)](https://pridelee.github.io/files/blog/Chapter-6-tree.pdf)
 - [Introduction to Information Retrieval (Chapter 12 Language models for information retrieval)](https://pridelee.github.io/files/blog/Chapter-12-Language-models-for-information-retrieval.pdf)
+- [Problem Solving with Algorithms and Data Structures Using Python (Chapter 6 Graph)](https://pridelee.github.io/files/blog/Chapter-7-Graph.pdf)
 
 For read easier and convenient, you can also follow my [Zhihu](https://zhuanlan.zhihu.com/c_1040305535475789824)  column.
