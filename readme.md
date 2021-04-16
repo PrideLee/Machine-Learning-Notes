@@ -58,5 +58,6 @@ This project is about machine learning, deep learning, data mining notes and rel
 - [Introduction to Information Retrieval (Chapter 12 Language models for information retrieval)](https://pridelee.github.io/files/blog/Chapter-12-Language-models-for-information-retrieval.pdf)
 - [Problem Solving with Algorithms and Data Structures Using Python (Chapter 7 Graph)](https://pridelee.github.io/files/blog/Chapter-7-Graph.pdf)
 - [Problem Solving with Algorithms and Data Structures Using Python (Chapter 8 Summary)](https://pridelee.github.io/files/blog/Chapter-8-Summary.pdf)
+- [Introduction to Information Retrieval (Chapter 13 Text classification and Naive Bayes)](https://pridelee.github.io/files/blog/Chapter-13-Text-classification-and-Naive-Bayes.pdf)
 
 For read easier and convenient, you can also follow my [Zhihu](https://zhuanlan.zhihu.com/c_1040305535475789824)  column.
