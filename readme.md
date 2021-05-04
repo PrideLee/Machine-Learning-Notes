@@ -61,5 +61,6 @@ This project is about machine learning, deep learning, data mining notes and rel
 - [Introduction to Information Retrieval (Chapter 13 Text classification and Naive Bayes)](https://pridelee.github.io/files/blog/Chapter-13-Text-classification-and-Naive-Bayes.pdf)
 - [Introduction to Information Retrieval (Chapter 14 Vector space classification)](https://pridelee.github.io/files/blog/Chapter-14-Vector-space-classification.pdf)
 - [Introduction to Information Retrieval (Chapter 15 Support vector machines and machine learning on documents)](https://pridelee.github.io/files/blog/Chapter-15-Support-vector-machines-and-machine-learning-on-documents.pdf)
+- [Introduction to Information Retrieval (Chapter 16 Flat Clustering)](https://pridelee.github.io/files/blog/Chapter-16-Flat-Clustering.pdf)
 
 For read easier and convenient, you can also follow my [Zhihu](https://zhuanlan.zhihu.com/c_1040305535475789824)  column.
