@@ -67,6 +67,7 @@ This project is about machine learning, deep learning, data mining notes and rel
 - [Introduction to Information Retrieval (Chapter 19 Web search basics)](https://pridelee.github.io/files/blog/Chapter-19-Web-search-basics.pdf)
 - [Introduction to Information Retrieval (Chapter 20 Web crawling and indexes)](https://pridelee.github.io/files/blog/Chapter-20-Web-crawling-and-indexes.pdf)
 - [Introduction to Information Retrieval (Chapter 21 Link analysis)](https://pridelee.github.io/files/blog/Chapter-21-Link-analysis.pdf)
+- [Graph Neural Networks in Recommender Systems: A Survey](https://pridelee.github.io/files/blog/Graph-Neural-Networks-in-Recommender-Systems-A-Survey.pdf)
 
 
 For read easier and convenient, you can also follow my [Zhihu](https://zhuanlan.zhihu.com/c_1040305535475789824)  column.
