@@ -70,6 +70,10 @@ This project is about machine learning, deep learning, data mining notes and rel
 - [Graph Neural Networks in Recommender Systems: A Survey](https://pridelee.github.io/files/blog/Graph-Neural-Networks-in-Recommender-Systems-A-Survey.pdf)
 - [A Survey on Heterogeneous Graph Embedding: Methods, Techniques, Applications and Sources](https://pridelee.github.io/files/blog/A-Survey-on-Heterogeneous-Graph-Embedding-Methods-Techniques-Applications-and-Sources.pdf)
 - [A Survey on Knowledge Graph-Based Recommendation System](https://pridelee.github.io/files/blog/A-Survey-on-Knowledge-Graph-Based-Recommendation-System.pdf)
-
+- [Continuous-Time Sequential Recommendation with Temporal Graph Collaborative Transformer](https://pridelee.github.io/files/blog/Continuous-Time-Sequential-Recommendation-with-Temporal-Graph-Collaborative-Transformer.pdf)
+- [Handling Information Loss of Graph Neural Networks for Session-based Recommendation](https://pridelee.github.io/files/blog/Handling-Information-Loss-of-Graph-Neural-Networks-for-Session-based-Recommendation.pdf)
+- [Lightweight Self-Attentive Sequential Recommendation](https://pridelee.github.io/files/blog/Lightweight-Self-Attentive-Sequential-Recommendation.pdf)
+- [MixGCF An Improved Training Method for Graph Neural Network-based Recommender Systems](https://pridelee.github.io/files/blog/MixGCF-An-Improved-Training-Method-for-Graph-Neural-Network-based-Recommender-Systems.pdf)
+- [CauseRec Counterfactual User Sequence Synthesis for Sequential Recommendation](https://pridelee.github.io/files/blog/CauseRec-Counterfactual-User-Sequence-Synthesis-for-Sequential-Recommendation.pdf)
 
 You can also follow my [Zhihu](https://zhuanlan.zhihu.com/c_1040305535475789824) column to check the above notes.
