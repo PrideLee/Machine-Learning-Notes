@@ -80,5 +80,6 @@ This project is about machine learning, deep learning, data mining notes and rel
 - [Package Recommendation with Intra- and Inter-Package Attention Networks](https://pridelee.github.io/files/blog/Package-Recommendation-with-Intra-and-Inter-Package-Attention-Networks.pdf)
 - [A Guided Learning Approach for Item Recommendation via Surrogate Loss Learning](https://pridelee.github.io/files/blog/A-Guided-Learning-Approach-for-Item-Recommendation-via-Surrogate-Loss-Learning.pdf)
 - [Recurrent Neural Networks with Top-k Gains for Session-based Recommendations](https://pridelee.github.io/files/blog/Recurrent-Neural-Networks-with-Top-k-Gains-for-Session-based-Recommendations.pdf)
+- [RepeatNet A Pepeat Aware Neural Recommendation Machine for Session-Based Recommendation](https://pridelee.github.io/files/blog/RepeatNet-A-Pepeat-Aware-Neural-Recommendation-Machine-for-Session-Based-Recommendation.pdf)
 
 You can also follow my [Zhihu](https://zhuanlan.zhihu.com/c_1040305535475789824) column to check the above notes.
