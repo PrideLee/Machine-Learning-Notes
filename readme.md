@@ -75,6 +75,10 @@ This project is about machine learning, deep learning, data mining notes and rel
 - [Lightweight Self-Attentive Sequential Recommendation](https://pridelee.github.io/files/blog/Lightweight-Self-Attentive-Sequential-Recommendation.pdf)
 - [MixGCF An Improved Training Method for Graph Neural Network-based Recommender Systems](https://pridelee.github.io/files/blog/MixGCF-An-Improved-Training-Method-for-Graph-Neural-Network-based-Recommender-Systems.pdf)
 - [CauseRec Counterfactual User Sequence Synthesis for Sequential Recommendation](https://pridelee.github.io/files/blog/CauseRec-Counterfactual-User-Sequence-Synthesis-for-Sequential-Recommendation.pdf)
-- [Dynamic Memory based Attention Network for Sequential Recommendation]((https://pridelee.github.io/files/blog/Dynamic-Memory-based-Attention-Network-for-Sequential-Recommendation.pdf)
+- [Dynamic Memory based Attention Network for Sequential Recommendation](https://pridelee.github.io/files/blog/Dynamic-Memory-based-Attention-Network-for-Sequential-Recommendation.pdf)
+- [Self-Supervised Graph Co-Training for Session-based Recommendation](https://pridelee.github.io/files/blog/Self-Supervised-Graph-Co-Training-for-Session-based-Recommendation.pdf)
+- [Package Recommendation with Intra- and Inter-Package Attention Networks](https://pridelee.github.io/files/blog/Package-Recommendation-with-Intra-and-Inter-Package-Attention-Networks.pdf)
+- [A Guided Learning Approach for Item Recommendation via Surrogate Loss Learning](https://pridelee.github.io/files/blog/A-Guided-Learning-Approach-for-Item-Recommendation-via-Surrogate-Loss-Learning.pdf)
+- [Recurrent Neural Networks with Top-k Gains for Session-based Recommendations](https://pridelee.github.io/files/blog/Recurrent-Neural-Networks-with-Top-k-Gains-for-Session-based-Recommendations.pdf)
 
 You can also follow my [Zhihu](https://zhuanlan.zhihu.com/c_1040305535475789824) column to check the above notes.
